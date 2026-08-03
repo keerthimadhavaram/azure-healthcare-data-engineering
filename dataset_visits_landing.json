@@ -1,0 +1,18 @@
+{
+  "name": "DS_Visits_Landing_CSV",
+  "type": "Microsoft.DataFactory/factories/datasets",
+  "properties": {
+    "type": "DelimitedText",
+    "linkedServiceName": { "referenceName": "LS_ADLS_HealthcareDataLake", "type": "LinkedServiceReference" },
+    "typeProperties": {
+      "location": {
+        "type": "AzureBlobFSLocation",
+        "fileSystem": "landing",
+        "folderPath": "visits",
+        "fileName": "visits_@{formatDateTime(pipeline().parameters.RunDate,'yyyy-MM-dd')}.csv"
+      },
+      "columnDelimiter": ",",
+      "firstRowAsHeader": true
+    }
+  }
+}

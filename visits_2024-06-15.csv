@@ -1,0 +1,2 @@
+visit_id,patient_id,visit_date,department,doctor,appointment_status,wait_time_minutes,diagnosis,charges,readmission_flag
+V002074,P00237,2024-06-15,Primary Care,Dr. Ahmed,Completed,13,Allergic Reaction,175.4,0

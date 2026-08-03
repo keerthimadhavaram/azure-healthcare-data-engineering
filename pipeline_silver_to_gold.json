@@ -1,0 +1,29 @@
+{
+  "name": "PL_Silver_To_Gold",
+  "type": "Microsoft.DataFactory/factories/pipelines",
+  "properties": {
+    "description": "Aggregates validated silver-layer visit data into gold KPI tables and loads them to Snowflake for Power BI consumption.",
+    "activities": [
+      {
+        "name": "TriggerSilverToGoldNotebook",
+        "type": "DatabricksNotebook",
+        "typeProperties": {
+          "notebookPath": "/Repos/healthcare-analytics/databricks/silver_to_gold",
+          "baseParameters": {}
+        },
+        "linkedServiceName": { "referenceName": "LS_Databricks", "type": "LinkedServiceReference" }
+      },
+      {
+        "name": "LoadGoldToSnowflake",
+        "type": "Copy",
+        "dependsOn": [{ "activity": "TriggerSilverToGoldNotebook", "dependencyConditions": ["Succeeded"] }],
+        "inputs": [{ "referenceName": "DS_Gold_DepartmentKPIs_Parquet", "type": "DatasetReference" }],
+        "outputs": [{ "referenceName": "DS_Snowflake_GoldDepartmentKPIs", "type": "DatasetReference" }],
+        "typeProperties": {
+          "source": { "type": "ParquetSource" },
+          "sink": { "type": "SnowflakeSink", "importSettings": { "type": "SnowflakeImportCopyCommand" } }
+        }
+      }
+    ]
+  }
+}

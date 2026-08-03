@@ -1,0 +1,41 @@
+patient_id,first_name,last_name,age,gender,city,state,insurance_type,registration_date
+P00131,Margaret,Khan,24,Female,Downers Grove,IL,Medicaid,2022-05-15
+P00292,Sofia,Singh,28,Female,Lombard,IL,Medicare,2022-12-28
+P00038,Diego,Brown,72,Female,Woodridge,IL,Private,2024-09-29
+P00240,Priya,Hernandez,27,Male,Bolingbrook,IL,Medicaid,2024-04-21
+P00192,Charles,Thompson,24,Female,Oak Brook,IL,Private,2021-02-13
+P00421,Patricia,Singh,41,Female,Joliet,IL,Private,2021-06-08
+P00324,Nancy,Martin,19,Male,Elmhurst,IL,PPO,2023-10-05
+P00028,Christopher,Martin,50,Female,Naperville,IL,Medicare,2022-12-12
+P00212,Margaret,Smith,35,Male,Joliet,IL,Medicare,2023-06-10
+P00485,Robert,White,57,Female,Downers Grove,IL,PPO,2024-01-09
+P00171,Layla,Thompson,24,Male,Downers Grove,IL,Self-Pay,2024-06-17
+P00154,Diego,Patel,28,Female,Naperville,IL,Medicare,2024-09-03
+P00242,Arjun,Ramirez,56,Female,Woodridge,IL,HMO,2021-11-06
+P00322,William,Rodriguez,42,Male,Elmhurst,IL,Medicare,2021-05-11
+P00425,Omar,Gonzalez,53,Male,Elmhurst,IL,HMO,2024-05-17
+P00180,Barbara,Hernandez,41,Male,Chicago,IL,HMO,2024-07-03
+P00437,James,Williams,47,Female,Woodridge,IL,Private,2023-08-26
+P00088,Keerthi,Robinson,29,Female,Woodridge,IL,PPO,2023-11-03
+P00113,Fatima,Perez,56,Male,Chicago,IL,Self-Pay,2022-12-06
+P00451,Sofia,Patel,43,Male,Oak Brook,IL,Medicaid,2024-06-23
+P00158,Wei,Robinson,75,Male,Oak Brook,IL,HMO,2022-04-09
+P00127,Karen,Chen,49,Female,Bolingbrook,IL,HMO,2023-06-27
+P00491,Diego,Nguyen,69,Male,Naperville,IL,Medicare,2022-05-10
+P00081,Margaret,Jones,3,Male,Downers Grove,IL,Self-Pay,2022-02-19
+P00074,Ahmed,Wilson,49,Male,Downers Grove,IL,Medicare,2022-01-30
+P00133,Jennifer,Thompson,13,Female,Aurora,IL,Medicare,2024-08-29
+P00205,Ahmed,Ali,59,Male,Aurora,IL,Medicare,2022-05-15
+P00463,Thomas,Rodriguez,78,Male,Aurora,IL,Medicaid,2022-12-29
+P00385,Robert,Jones,30,Male,Downers Grove,IL,Private,2021-12-25
+P00273,Richard,Brown,56,Male,Oak Brook,IL,Medicare,2023-07-15
+P00345,Barbara,Robinson,48,Female,Lombard,IL,Self-Pay,2023-02-15
+P00379,Barbara,Moore,25,Female,Aurora,IL,HMO,2024-03-18
+P00102,Mark,Wilson,39,Female,Woodridge,IL,Private,2023-12-21
+P00291,David,Clark,59,Female,Elmhurst,IL,Private,2023-11-20
+P00197,Ravi,Rodriguez,47,Female,Naperville,IL,Private,2023-07-22
+P00267,Ahmed,Harris,67,Female,Bolingbrook,IL,Private,2022-09-02
+P00358,Daniel,Harris,26,Female,Chicago,IL,Medicaid,2023-10-10
+P00416,Wei,Anderson,27,Male,Naperville,IL,HMO,2021-11-09
+P00314,Jennifer,Khan,60,Female,Elmhurst,IL,Medicaid,2022-01-27
+P00269,Patricia,Smith,51,Female,Aurora,IL,Private,2023-10-05

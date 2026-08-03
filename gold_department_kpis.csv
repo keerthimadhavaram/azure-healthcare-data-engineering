@@ -1,0 +1,11 @@
+department,total_visits,total_revenue,no_shows,no_show_rate_pct
+Cardiology,221,68785.59,43,19.5
+Dermatology,224,37172.46,26,11.6
+Emergency,255,107702.2,35,13.7
+General Surgery,259,185785.15,24,9.3
+Neurology,260,77580.74,38,14.6
+Oncology,233,117606.49,35,15.0
+Orthopedics,285,81440.14,43,15.1
+Pediatrics,268,38916.67,25,9.3
+Primary Care,270,31911.22,41,15.2
+Radiology,225,54258.47,29,12.9

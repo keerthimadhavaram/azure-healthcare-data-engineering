@@ -1,0 +1,15 @@
+{
+  "name": "LS_ADLS_HealthcareDataLake",
+  "type": "Microsoft.DataFactory/factories/linkedservices",
+  "properties": {
+    "type": "AzureBlobFS",
+    "typeProperties": {
+      "url": "https://healthcaredatalake.dfs.core.windows.net",
+      "accountKey": {
+        "type": "AzureKeyVaultSecret",
+        "store": { "referenceName": "LS_KeyVault", "type": "LinkedServiceReference" },
+        "secretName": "adls-account-key"
+      }
+    }
+  }
+}

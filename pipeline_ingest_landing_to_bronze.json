@@ -1,0 +1,48 @@
+{
+  "name": "PL_Ingest_Landing_To_Bronze",
+  "type": "Microsoft.DataFactory/factories/pipelines",
+  "properties": {
+    "description": "Daily incremental ingestion of patient/visit extracts from the landing zone into the bronze layer, stamped with source metadata for lineage.",
+    "parameters": {
+      "RunDate": { "type": "String", "defaultValue": "@utcnow('yyyy-MM-dd')" }
+    },
+    "activities": [
+      {
+        "name": "CheckLandingFileExists",
+        "type": "GetMetadata",
+        "typeProperties": {
+          "dataset": { "referenceName": "DS_Visits_Landing_CSV", "type": "DatasetReference" },
+          "fieldList": ["exists"]
+        }
+      },
+      {
+        "name": "CopyVisitsLandingToBronze",
+        "type": "Copy",
+        "dependsOn": [{ "activity": "CheckLandingFileExists", "dependencyConditions": ["Succeeded"] }],
+        "inputs": [{ "referenceName": "DS_Visits_Landing_CSV", "type": "DatasetReference" }],
+        "outputs": [{ "referenceName": "DS_Visits_Bronze_Parquet", "type": "DatasetReference" }],
+        "typeProperties": {
+          "source": { "type": "DelimitedTextSource" },
+          "sink": { "type": "ParquetSink" },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              { "source": { "name": "visit_id" }, "sink": { "name": "visit_id" } },
+              { "source": { "name": "patient_id" }, "sink": { "name": "patient_id" } }
+            ]
+          }
+        }
+      },
+      {
+        "name": "TriggerBronzeToSilverNotebook",
+        "type": "DatabricksNotebook",
+        "dependsOn": [{ "activity": "CopyVisitsLandingToBronze", "dependencyConditions": ["Succeeded"] }],
+        "typeProperties": {
+          "notebookPath": "/Repos/healthcare-analytics/databricks/bronze_to_silver",
+          "baseParameters": { "run_date": "@pipeline().parameters.RunDate" }
+        },
+        "linkedServiceName": { "referenceName": "LS_Databricks", "type": "LinkedServiceReference" }
+      }
+    ]
+  }
+}
